@@ -1,7 +1,5 @@
 import sbt._
-
 import Dependencies._
-
 import sbtbuildinfo.BuildInfoPlugin.autoImport._
 
 
@@ -24,7 +22,7 @@ val baseSettings = Seq(
 )
 
 lazy val commonSettings = Seq(
-  libraryDependencies ++= baseDependencies
+  libraryDependencies ++= (baseDependencies ++ loggingDependency)
 )
 
 lazy val daedalus = (project in file("."))
