@@ -22,7 +22,11 @@ val baseSettings = Seq(
 )
 
 lazy val commonSettings = Seq(
-  libraryDependencies ++= (baseDependencies ++ loggingDependency)
+  libraryDependencies ++= (baseDependencies ++ loggingDependency),
+  initialCommands in console += """import io.github.mandar2812.daedalus.turing.Direction._;"""+
+    """import io.github.mandar2812.daedalus.turing.CellState._;"""+
+    """import io.github.mandar2812.daedalus.turing.build.Dsl._;"""+
+    """import io.github.mandar2812.daedalus.turing.build.ProgramBuilder"""
 )
 
 lazy val daedalus = (project in file("."))
