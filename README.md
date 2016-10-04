@@ -5,7 +5,24 @@
 ## Installation Instructions.
 
 1. Clone this repository
-2. In the top most directory run ```sbt console```
+2. In the top most directory run ```sbt console```, you should see the following prompt.
+```
+
+                                      ,,             ,,
+`7MM"""Yb.                          `7MM           `7MM
+  MM    `Yb.                          MM             MM
+  MM     `Mb  ,6"Yb.   .gP"Ya    ,M""bMM   ,6"Yb.    MM  `7MM  `7MM  ,pP"Ybd
+  MM      MM 8)   MM  ,M'   Yb ,AP    MM  8)   MM    MM    MM    MM  8I   `"
+  MM     ,MP  ,pm9MM  8M"""""" 8MI    MM   ,pm9MM    MM    MM    MM  `YMMMa.
+  MM    ,dP' 8M   MM  YM.    , `Mb    MM  8M   MM    MM    MM    MM  L.   I8
+.JMMmmmdP'   `Moo9^Yo. `Mbmmd'  `Wbmd"MML.`Moo9^Yo..JMML.  `Mbod"YML.M9mmmP'
+
+Welcome to DynaML v1.4 
+Interactive Scala shell for Machine Learning Research
+(Scala 2.11.8 Java 1.8.0_101)
+DynaML> 
+
+```
 
 ## Module: Turing
 
@@ -53,10 +70,6 @@ the tape is transited from `>01010` to `>011`
 ## Creating your own programs
 
 ```scala
-import io.github.mandar2812.turing.Direction._
-import io.github.mandar2812.turing.CellState._
-import io.github.mandar2812.turing.build.Dsl._
-import io.github.mandar2812.turing.build.ProgramBuilder
 val program = ProgramBuilder(
               		"q1" -> R~"q2",
               		"q2" -> (`1` -> R.c, `0` -> `1`~L~"q3"),
@@ -84,9 +97,6 @@ The value `L` has aliases `Left` and `<=`; the aliases of `R` are `Right` and `-
 #### Building commands
 
 ```scala
-import io.github.mandar2812.turing.Direction._
-import io.github.mandar2812.turing.CellState._
-import io.github.mandar2812.turing.build.Dsl._
 val command1 = "q2".c // just to transit to state `q2`
 val command2 = L~"q2" // to move the caret left and transit to state `q2`
 val command3 = `0`~"q2" // to assign the current cell with `0` and transit to state `q2`
@@ -97,9 +107,6 @@ val command5 = `0` L "q2" // the same as `command4`
 #### Building states
 
 ```scala
-import io.github.mandar2812.turing.Direction._
-import io.github.mandar2812.turing.CellState._
-import io.github.mandar2812.turing.build.Dsl._
 val state1 = "q1" -> R~"q2" // to move the caret right and transit to state `q2`
 val state2 = "q2" -> (`0` -> L~"q3", `1` -> R~"q4") // if the current cell contains `0`,
                                                     // move the caret left and transit to state `q3`,
@@ -133,10 +140,6 @@ it is recommended to use [Tape.Finite](http://skozlov.github.io/turing/scaladoc/
 #### Base tape
 
 ```scala
-import io.github.mandar2812.turing.Direction._
-import io.github.mandar2812.turing.CellState._
-import io.github.mandar2812.turing.build.Dsl._
-import io.github.mandar2812.turing.build.ProgramBuilder
 val tape = "010".tape
 println(tape) // `>01` (the right cell is ignored, since it contains `0` by contract; the first character is `>`,
               // which means that the caret index is `0`)
@@ -161,10 +164,6 @@ tape(program3) // Tape.OutOfBoundsException.Left is thrown
 #### Finite tape
 
 ```scala
-import io.github.mandar2812.turing.Direction._
-import io.github.mandar2812.turing.CellState._
-import io.github.mandar2812.turing.build.Dsl._
-import io.github.mandar2812.turing.build.ProgramBuilder
 val tape = "010".finiteTape
 println(tape) // `>01`
 val program1 = ProgramBuilder(
