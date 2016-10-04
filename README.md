@@ -2,6 +2,8 @@
 
 >The master craftsman.
 
+A scala toolkit for building probabilistic models of dynamical systems & turing machines.
+
 ## Installation Instructions.
 
 1. Clone this repository
