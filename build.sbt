@@ -10,7 +10,7 @@ version := "0.1"
 scalaVersion := "2.11.8"
 
 
-//maintainer := "Mandar Chandorkar <mandar2812@gmail.com>"
+maintainer := "Mandar Chandorkar <mandar2812@gmail.com>"
 
 val baseSettings = Seq(
   organization := "io.github.mandar2812",
@@ -23,10 +23,7 @@ val baseSettings = Seq(
 
 lazy val commonSettings = Seq(
   libraryDependencies ++= (baseDependencies ++ loggingDependency),
-  initialCommands in console += """import io.github.mandar2812.daedalus.turing.Direction._;"""+
-    """import io.github.mandar2812.daedalus.turing.CellState._;"""+
-    """import io.github.mandar2812.daedalus.turing.build.Dsl._;"""+
-    """import io.github.mandar2812.daedalus.turing.build.ProgramBuilder"""
+  initialCommands in console += """io.github.mandar2812.dynaml.DynaML.main(Array())"""
 )
 
 lazy val daedalus = (project in file("."))

@@ -19,7 +19,7 @@ object Dependencies {
     "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test",
     "com.typesafe.akka" %% "akka-stream" % "2.4.6",
     "com.github.scopt" % "scopt_2.11" % "3.5.0",
-    "com.github.mandar2812.DynaML" % "dynaml-core_2.11" % "v1.4",
+    "com.github.mandar2812.DynaML" % "dynaml_2.11" % "v1.4",
     "org.typelevel" % "scodec-core_2.11" % "1.6.0"
   )
 
