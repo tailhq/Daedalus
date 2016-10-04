@@ -6,6 +6,7 @@
 
 1. Clone this repository
 2. In the top most directory run ```sbt console```, you should see the following prompt.
+
 ```
 
                                       ,,             ,,
@@ -23,6 +24,7 @@ Interactive Scala shell for Machine Learning Research
 DynaML> 
 
 ```
+
 
 ## Module: Turing
 
