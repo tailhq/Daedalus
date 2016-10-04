@@ -20,7 +20,10 @@ object Dependencies {
     "com.typesafe.akka" %% "akka-stream" % "2.4.6",
     "com.github.scopt" % "scopt_2.11" % "3.5.0",
     "com.github.mandar2812.DynaML" % "dynaml_2.11" % "v1.4",
-    "org.typelevel" % "scodec-core_2.11" % "1.6.0"
+    "org.scodec" % "scodec-core_2.11" % "1.10.2",
+    "org.scodec" % "scodec-bits_2.11" % "1.1.1",
+    "org.scodec" % "scodec-stream_2.11" % "1.0.0",
+    "org.scodec" % "scodec-scalaz_2.11" % "1.3.0"
   )
 
   val loggingDependency = Seq("log4j" % "log4j" % "1.2.17" % "compile")

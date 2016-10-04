@@ -15,3 +15,7 @@ import io.github.mandar2812.daedalus.turing.Direction._
 import io.github.mandar2812.daedalus.turing.CellState._
 import io.github.mandar2812.daedalus.turing.build.Dsl._
 import io.github.mandar2812.daedalus.turing.build.ProgramBuilder
+import scodec.Codec
+import scodec.codecs.implicits._
+import scodec.bits._
+import scodec.codecs._
