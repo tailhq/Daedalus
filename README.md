@@ -178,14 +178,3 @@ val program2 = ProgramBuilder(
 ).toProgram
 tape(program2) // Tape.OutOfBoundsException.Right is thrown
 ```
-
-## Modules and artifacts
-
-Module name | Artifact ID | Description | Dependencies
-------------|-------------|-------------|----------------
-`base` | `turing-base` | Turing machine emulator | `org.scala-lang:scala-library:2.11.7`
-`build` | `turing-build` | DSL for creating programs | `turing-base`
-`math` | `turing-math` | Arithmetical programs working right for [both supported encodings of numbers](https://github.com/skozlov/turing/blob/master/README.md#arithmetical-computations) | `turing-build`
-`math00` | `turing-math00` | Arithmetical programs which are specific for the ["n to n" encoding](https://github.com/skozlov/turing/blob/master/README.md#arithmetical-computations) | `turing-math`
-`math01` | `turing-math01` | Arithmetical programs which are specific for the ["n to n+1" encoding](https://github.com/skozlov/turing/blob/master/README.md#arithmetical-computations) | `turing-math`
-`turing` (root) | `turing` | Combines all other modules of the library
