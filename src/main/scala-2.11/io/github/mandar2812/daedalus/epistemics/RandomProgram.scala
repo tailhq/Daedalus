@@ -24,7 +24,7 @@ class RandomProgram(
 
   override val sample: DataPipe[Unit, Program] = DataPipe(() => {
 
-    val commands = (0 until num_states).map(stateIndex => {
+    val commands = (1 until num_states).map(stateIndex => {
 
       //For each state generate a command
       val (zerocommand, onecommand) = {
