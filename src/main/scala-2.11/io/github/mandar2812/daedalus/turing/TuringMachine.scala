@@ -1,8 +1,10 @@
 package io.github.mandar2812.daedalus.turing
 
 /**
-  * Created by mandar on 04/10/2016.
+  * @author mandar2812 date 04/10/2016.
   */
-class TuringMachine {
+class TuringMachine(tape: Tape, memory: Tape.Finite){
+
+
 
 }
