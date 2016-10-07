@@ -18,6 +18,8 @@ class MarkovTuringProcess(num_states: Int, conditional: ((Int, Int)) => DenseVec
 
   val encoding = new TupleIntegerEncoding(List(2, 3, num_states))
 
+  def _num_states = num_states
+
   override def run(data: (Int, Int)): RandomVariable[(Int, Int, Int)] = {
     MeasurableFunction(RandomVariable(new Multinomial(conditional(data))))(
       DataPipe((n: Int) => {
