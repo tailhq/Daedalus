@@ -50,15 +50,15 @@ val res: Seq[Option[String]] = (1 to 10000).map(_ => progRV.sample()).map(p => {
 }).toSeq.filterNot(c => c == None || c == Some(">01010101"))
 
 
-val stPrior = MeasurableFunction(RandomVariable(new Poisson(4.5)))(DataPipe((x: Int) => x+2))
+val stPrior = MeasurableFunction(RandomVariable(new Poisson(3.5)))(DataPipe((x: Int) => x+2))
 
 val dirModel = new DirichletTuringModel(stPrior)
 
 
-val res: Seq[(Int, Option[String])] = (1 to 50).map(_ => {
+val res = (1 to 10).map(_ => {
   val s = dirModel.sample()
 
-  (1 to 2000).map(_ => {
+  (1 to 4000).map(_ => {
     (s._1, s._2.sample())
   }).toSeq
 
@@ -70,11 +70,11 @@ val res: Seq[(Int, Option[String])] = (1 to 50).map(_ => {
     tape1(p._2)
     println("Result")
     println(tape1)
-    (p._1, Some(tape1.toString))
+    (p._1, p._2, Some(tape1.toString))
   } catch {
-    case e: StackOverflowError => (p._1, None)
-    case e: Exception => (p._1, None)
+    case e: StackOverflowError => (p._1, p._2, None)
+    case e: Exception => (p._1, p._2, None)
   } finally {
     println("\n")
   }
-}).toSeq.filterNot(c => c._2 == None)
+}).filterNot(c => c._3 == None).toSeq

@@ -14,7 +14,7 @@ import scala.util.Random
 class DirichletTuringModel(priorNumStates: RandomVariable[Int], cellStates: Int = 2)
   extends EpistemicTuringModel[Int](
     priorNumStates,
-    DataPipe((  states) => {
+    DataPipe((states) => {
       implicit val ev = VectorField(3*cellStates*states)
       val baseVec = () => DenseVector.tabulate[Double](3*cellStates*states)(i => math.abs(2.0*Random.nextGaussian()))
       val dirichlet = RandomVariable(new Dirichlet(baseVec()))
@@ -27,5 +27,5 @@ class DirichletTuringModel(priorNumStates: RandomVariable[Int], cellStates: Int 
         stateProbMap(c)
       }
 
-      new MarkovTuringProcess(states, cond)
+      new MarkovTuringProcess(states, cond, cellStates)
   }))

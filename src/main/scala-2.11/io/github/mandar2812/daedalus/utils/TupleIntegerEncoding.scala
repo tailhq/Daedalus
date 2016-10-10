@@ -5,7 +5,7 @@ import io.github.mandar2812.dynaml.pipes.DataPipe
 /**
   * Created by mandar on 06/10/2016.
   */
-class TupleIntegerEncoding(arities: List[Int]) extends DataPipe[List[Int], Int] {
+case class TupleIntegerEncoding(arities: List[Int]) extends DataPipe[List[Int], Int] {
 
   assert(arities.forall(_ >= 2), "The arities must be greater than 1")
 
@@ -16,7 +16,7 @@ class TupleIntegerEncoding(arities: List[Int]) extends DataPipe[List[Int], Int] 
 
   def decodeAcc(n: (Int, List[Int]), modAcc: Int, acc: List[Int]): List[Int] = n match {
     case (v, List()) => acc++List(v)
-    case (0, _) => List.fill[Int](arities.length)(0)
+    case (0, l) => acc++List.fill[Int](arities.length-acc.length)(0)
     case (v, h::tail) => decodeAcc((v/modAcc, tail), h, acc++List(v%modAcc))
   }
 

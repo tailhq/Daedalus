@@ -9,10 +9,10 @@ import io.github.mandar2812.dynaml.probability.RandomVariable
 /**
   * Created by mandar on 06/10/2016.
   */
-class MarkovTuringProcess(num_states: Int, conditional: ((Int, Int)) => DenseVector[Double])
+class MarkovTuringProcess(num_states: Int, conditional: ((Int, Int)) => DenseVector[Double], cellStates: Int = 2)
   extends DataPipe[(Int, Int), RandomVariable[(Int, Int, Int)]] {
 
-  assert(conditional(0,0).length == 2*3*num_states,
+  assert(conditional(0,0).length == cellStates*3*num_states,
     "Product of bit cardinality * direction cardinality * state cardinality "+
       "must match with Multinomial parameter vector length")
 
