@@ -55,6 +55,8 @@ val stPrior = MeasurableFunction(RandomVariable(new Poisson(3.5)))(DataPipe((x: 
 val dirModel = new DirichletTuringModel(stPrior)
 
 
+val str = "00101"
+
 val res = (1 to 10).map(_ => {
   val s = dirModel.sample()
 
@@ -63,7 +65,7 @@ val res = (1 to 10).map(_ => {
   }).toSeq
 
 }).flatten.map(p => {
-  val tape1 = "00000101".finiteTape
+  val tape1 = str.finiteTape
   println("Tape Before: ")
   println(tape1)
   try {
@@ -77,4 +79,4 @@ val res = (1 to 10).map(_ => {
   } finally {
     println("\n")
   }
-}).filterNot(c => c._3 == None).toSeq
+}).filterNot(c => c._3 == None)
