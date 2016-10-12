@@ -4,7 +4,7 @@ import breeze.linalg.DenseVector
 import breeze.stats.distributions.Multinomial
 import io.github.mandar2812.daedalus.utils.TupleIntegerEncoding
 import io.github.mandar2812.dynaml.pipes.DataPipe
-import io.github.mandar2812.dynaml.probability.RandomVariable
+import io.github.mandar2812.dynaml.probability.{MeasurableFunction, RandomVariable}
 
 /**
   * Created by mandar on 06/10/2016.
