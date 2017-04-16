@@ -28,13 +28,13 @@ class RandomProgram(
 
       //For each state generate a command
       val (zerocommand, onecommand) = {
-        val sampleZero = transitionModel((stateIndex, 0)).sample()
+        val sampleZero = transitionModel((stateIndex, 0)).draw
 
         val (cellState1, direction1, newState1) = {
           (bitEncoding(sampleZero._1), directionEncoding(sampleZero._2), stateEncoding(sampleZero._3))
         }
 
-        val sampleOne = transitionModel((stateIndex, 1)).sample()
+        val sampleOne = transitionModel((stateIndex, 1)).draw
 
         val (cellState2, direction2, newState2) = {
           (bitEncoding(sampleOne._1), directionEncoding(sampleOne._2), stateEncoding(sampleOne._3))
