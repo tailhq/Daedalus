@@ -4,7 +4,7 @@ import breeze.linalg.DenseVector
 import breeze.stats.distributions.Dirichlet
 import io.github.mandar2812.dynaml.analysis.VectorField
 import io.github.mandar2812.dynaml.pipes.DataPipe
-import io.github.mandar2812.dynaml.probability.{ProbabilityModel, RandomVariable}
+import io.github.mandar2812.dynaml.probability.RandomVariable
 
 import scala.util.Random
 

@@ -19,7 +19,7 @@ object Dependencies {
     "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test",
     "com.typesafe.akka" %% "akka-stream" % "2.4.6",
     "com.github.scopt" % "scopt_2.11" % "3.5.0",
-    "com.github.mandar2812.DynaML" % "dynaml_2.11" % "v1.4.1-beta.2",
+    "com.github.transcendent-ai-labs.DynaML" % "dynaml_2.11" % "v1.4.2-beta.1",
     "org.scodec" % "scodec-core_2.11" % "1.10.2",
     "org.scodec" % "scodec-bits_2.11" % "1.1.1",
     "org.scodec" % "scodec-stream_2.11" % "1.0.0",

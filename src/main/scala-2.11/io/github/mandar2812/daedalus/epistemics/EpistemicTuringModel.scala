@@ -12,7 +12,7 @@ class EpistemicTuringModel[Source](
   extends RandomVariable[(Source, RandomProgram)]{
 
   override val sample: DataPipe[Unit, (Source, RandomProgram)] = DataPipe(() => {
-    val p = prior.sample()
+    val p = prior.draw
     val mkv_tp = generator(p)
 
     (p, new RandomProgram(mkv_tp._num_states, mkv_tp))
